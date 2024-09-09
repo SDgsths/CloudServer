@@ -19,6 +19,8 @@ class DB:
         msgs = ""
 
         for message in db:
+
+            message["content"].replace("<", "").replace(">", "")
             new_msg = msg.replace("[USER]", message["User"]).replace("[CONTENT]", message["content"]).replace("[COLOR]", message["color"])
 
             msgs += new_msg
